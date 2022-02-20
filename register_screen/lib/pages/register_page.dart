@@ -29,10 +29,11 @@ class ResgisterPage extends StatelessWidget {
             runSpacing: defaultSpacing,
             children: [
               SizedBox(
-                  width: 100,
+                  width: double.infinity,
                   height: 100,
                   child:
                       Image(image: AssetImage('assets/images/form_icon.png'))),
+              Text('Ingrese sus datos'),
               TextField(
                   decoration: inputDecoration(Icons.person, 'Usuario'),
                   maxLines: 1),
@@ -58,29 +59,32 @@ class ResgisterPage extends StatelessWidget {
                   decoration: inputDecoration(Icons.phone, 'Telefono'),
                   maxLines: 1),
               TextField(
-                  decoration: inputDecoration(Icons.verified_user, 'Correo'),
+                  decoration: inputDecoration(Icons.email, 'Correo'),
                   maxLines: 1),
-              Padding(
-                padding: EdgeInsets.only(right: defaultSpacing),
+              SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () => showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                                title: Text('Informacion guardada'),
+                              )),
+                      child: Text('Guardar'),
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.blueAccent,
+                          textStyle: TextStyle(fontSize: 16)))),
+              SizedBox(
+                width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                              title: Text('Informacion guardada'),
-                            )),
-                    child: Text('Guardar'),
+                    onPressed: () {},
+                    child: Text('Cancelar'),
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.blueAccent,
-                        textStyle: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold))),
+                        primary: Colors.greenAccent,
+                        textStyle: TextStyle(fontSize: 16))),
               ),
-              ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Cancelar'),
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.greenAccent,
-                      textStyle: TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.bold))),
+              Padding(
+                  padding: EdgeInsets.all(defaultSpacing),
+                  child: Text('By Luis Flores 2022'))
             ]),
       );
 }

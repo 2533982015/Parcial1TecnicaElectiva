@@ -10,13 +10,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-        title: 'Parcial 1 - pantalla de registro',
+        debugShowCheckedModeBanner: false,
+        title: 'Parcial 1 App',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.amber,
         ),
         home: Scaffold(
-          appBar: AppBar(title: Text('Parcial 1 - pantalla de registro')),
+          appBar: AppBar(title: Text('Pantalla de registro')),
           body: Container(color: Colors.white, child: ResgisterPage()),
         ));
   }
